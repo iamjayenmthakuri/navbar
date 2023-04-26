@@ -1,5 +1,105 @@
 .main {
-  background-color: aquamarine;
-  width: 100vhv;
-  height: max-content;
+  background-color: rgb(194, 201, 199);
+
+  height: 64px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.hidden {
+  display: none;
+}
+.mainElement,
+.mainElement ul {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: min-content;
+  margin-right: 19rem;
+  font-size: 10px;
+  gap: 40%;
+}
+.main ul li {
+  list-style-type: none;
+  font-style: normal;
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  color: rgb(29, 15, 217);
+  text-decoration: underline;
+}
+
+.socialMedia ul {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 4%;
+}
+.socialMedia ul li input {
+  outline: none;
+  background-color: #faf9f9d1;
+  padding-left: 4px;
+  padding: 5px;
+  font-size: 17px;
+  border: 1px solid #052640;
+
+  width: 280px;
+  border-radius: 10px 0 10px 0;
+  background: #f1f1f1;
+}
+.socialMedia input {
+  border: none;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search button {
+  margin-left: 262.9px;
+  padding: 5px;
+  background: #052640;
+  color: white;
+  font-size: 17px;
+  border: 1px solid #052640;
+  border-left: none;
+  cursor: pointer;
+  border-radius: 0 0 10px 0;
+  position: absolute;
+}
+.linkFacebook {
+  font-size: 30px;
+  color: blue;
+  text-align: center;
+  text-decoration: none;
+}
+.linkInstagram {
+  color: #e4405f;
+  text-align: center;
+  text-decoration: none;
+}
+@media screen and (max-width: 1096px) {
+  .socialMedia {
+    display: none;
+  }
+  .about,
+  .contact {
+    display: none;
+  }
+  .hidden {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .main {
+    width: 775px;
+  }
 }
