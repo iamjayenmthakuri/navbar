@@ -105,10 +105,6 @@
   .seenSocialMedia {
     height: 90vh;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-top: 200px;
-    background-color: #052640;
   }
 }
 
