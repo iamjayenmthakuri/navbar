@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../components/Navbar.module.css";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/Rx";
@@ -8,6 +8,10 @@ import { RiSearch2Line } from "react-icons/Ri";
 import { SiAboutdotme } from "react-icons/Si";
 
 const Navbar = () => {
+  const [isActive, setIsActive] = useState(false);
+  const handleChange = () => {
+    setIsActive(!isActive);
+  };
   return (
     <main className={styles.main}>
       <div className={styles.mainElement}>
@@ -18,13 +22,21 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li className={styles.contact}>
+          <li
+            className={`${styles.contact} ${
+              isActive ? styles.contact : styles.seenContact
+            }`}
+          >
             <Link className={styles.link} href="/contact">
               <TiContacts size={20} />
               Contact
             </Link>
           </li>
-          <li className={styles.about}>
+          <li
+            className={`${styles.about} ${
+              isActive ? styles.about : styles.seenAbout
+            }`}
+          >
             <Link className={styles.link} href="/about">
               <SiAboutdotme size={20} />
               About
@@ -32,7 +44,11 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className={styles.socialMedia}>
+      <div
+        className={`${styles.socialMedia} ${
+          isActive ? styles.socialMedia : styles.seenSocialMedia
+        }`}
+      >
         <ul>
           <li className={styles.search}>
             <input type="text" placeholder="Search . . ." />
@@ -67,7 +83,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className={styles.hidden}>
-        <button>
+        <button onClick={handleChange}>
           {" "}
           <RxHamburgerMenu size={25} />
         </button>
